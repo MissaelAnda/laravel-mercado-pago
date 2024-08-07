@@ -1,0 +1,32 @@
+{
+    "name": "missael-anda/laravel-mercado-pago",
+    "description": "MercadoPago API for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "MissaelAnda\\MercadoPago\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Missael H. Anda",
+            "email": "missael.anda@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "illuminate/support": "^10.0|^11.0",
+        "mercadopago/dx-php": "^3.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MissaelAnda\\MercadoPago\\MercadoPagoServiceProvider"
+            ],
+            "aliases": {
+                "MercadoPago": "MissaelAnda\\MercadoPago\\Facade\\MercadoPago"
+            }
+        }
+    }
+}
