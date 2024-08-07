@@ -17,5 +17,5 @@ class Payment extends Resource
     public int $installments;
     public string $installmentsCost;
     public string $type;
-    public string $state;
+    public ?string $state;
 }
