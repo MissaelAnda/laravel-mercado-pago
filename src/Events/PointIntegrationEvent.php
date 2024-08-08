@@ -10,8 +10,8 @@ class PointIntegrationEvent
     use Dispatchable;
 
     public function __construct(
-        protected ?string $requestId,
-        protected PaymentIntent $intent
+        public ?string $requestId,
+        public PaymentIntent $intent
     ) {
         //
     }
