@@ -5,7 +5,7 @@ namespace MissaelAnda\MercadoPago\Resources\Point;
 use MissaelAnda\MercadoPago\Resources\Resource;
 
 /**
- * @method static setAdditional_info(AdditionalInfo $additional_info)
+ * @method static setAdditionalInfo(AdditionalInfo $additional_info)
  * @method static setAmount(int $amount)
  * @method static setDescription(string $description)
  * @method static setDeviceId(string $deviceId)

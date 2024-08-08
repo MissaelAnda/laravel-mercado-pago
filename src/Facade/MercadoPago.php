@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static \MissaelAnda\MercadoPago\Clients\StoreClient stores(MercadoPagoTenant|null $tenant = null)
  * @method static \MissaelAnda\MercadoPago\Clients\PosClient pos(MercadoPagoTenant|null $tenant = null)
  * @method static \MissaelAnda\MercadoPago\Clients\PointClient points(MercadoPagoTenant|null $tenant = null)
- * @method static \MissaelAnda\MercadoPAgo\Clients\PaymentClient payments(MercadoPagoTenant|null $tenant = null)
+ * @method static \MissaelAnda\MercadoPago\Clients\PaymentClient payments(MercadoPagoTenant|null $tenant = null)
  * @method static \MercadoPago\Resources\User me(MercadoPagoTenant|null $tenant = null)
  */
 class MercadoPago extends Facade
