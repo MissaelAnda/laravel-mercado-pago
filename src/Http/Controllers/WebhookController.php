@@ -3,6 +3,7 @@
 namespace MissaelAnda\MercadoPago\Http\Controllers;
 
 use Illuminate\Http\Request;
+use MissaelAnda\MercadoPago\Events\WebhookData;
 use MissaelAnda\MercadoPago\Events\WebhookEvent;
 use MissaelAnda\MercadoPago\Events\PointIntegrationEvent;
 use MissaelAnda\MercadoPago\Events\WebhookReceived;
@@ -21,7 +22,7 @@ class WebhookController
 
         event(match ($request->input('type')) {
             'point_integration_wh' => new PointIntegrationEvent($requestId, new PaymentIntent($request->request->all())),
-            default => new WebhookEvent($request->request->all() + compact('requestId')),
+            default => new WebhookEvent($requestId, new WebhookData($request->request->all())),
         });
 
         return response()->json();
