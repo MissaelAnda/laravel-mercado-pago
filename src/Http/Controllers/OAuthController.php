@@ -9,6 +9,11 @@ class OAuthController
 {
     public function __invoke(Request $request)
     {
+        $request->validate([
+            'code' => 'required|string',
+            'state' => 'sometimes|nullable|string',
+        ]);
+
         OAuthCallbackReceived::dispatch($request->query('code'), $request->query('state'));
 
         if ($view = config('mercado-pago.oauth.view')) {
