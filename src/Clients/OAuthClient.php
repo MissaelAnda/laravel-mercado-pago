@@ -105,7 +105,7 @@ class OAuthClient extends Client
     public function generateCodeChallenge(string $verifyCode, string $method = 'S256'): string
     {
         return match (strtolower($method)) {
-            's256' => rtrim(base64_encode(hash('sha256', $verifyCode)), '='),
+            's256' => rtrim(strtr(base64_encode(hash('sha256', $verifyCode, true)), '+/', '-_'), '='),
             'plain' => $verifyCode,
             default => throw new \InvalidArgumentException('The allowed methods are S256 and PLAIN.'),
         };
