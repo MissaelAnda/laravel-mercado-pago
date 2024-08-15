@@ -113,11 +113,11 @@ return [
         /**
          * A custom view to render when the client has successfully authorized the application
          */
-        'view' => null,
+        'view' => env('MERCADO_PAGO_AUTHORIZED_VIEW'),
 
         /**
          * A route or url to redirect when the client has successfully authorized the application
          */
-        'redirect' => null,
+        'redirect' => env('MERCADO_PAGO_AUTHORIZED_REDIRECT'),
     ],
 ];
