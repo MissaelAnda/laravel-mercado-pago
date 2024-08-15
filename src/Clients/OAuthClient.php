@@ -81,7 +81,7 @@ class OAuthClient extends Client
         ];
 
         if ($verifyCode) {
-            $data['verify_code'] = $verifyCode;
+            $data['code_verifier'] = $verifyCode;
         }
 
         $data = $this->post(self::OAUTH_API, $data);
