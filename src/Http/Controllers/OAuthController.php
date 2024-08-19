@@ -24,6 +24,6 @@ class OAuthController
             return redirect($redirect);
         }
 
-        return response();
+        return response()->json();
     }
 }
