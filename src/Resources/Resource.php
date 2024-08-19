@@ -138,7 +138,7 @@ abstract class Resource implements Arrayable, \ArrayAccess, \JsonSerializable
             // If the field has not been set this will throw an \Error
             $this->{$field}; // @phpstan-ignore-line
             return true;
-        } catch (\Error) { // @phpstan-ignore-line
+        } catch (\ErrorException) { // @phpstan-ignore-line
             return false;
         }
     }
