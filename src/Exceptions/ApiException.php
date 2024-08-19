@@ -2,7 +2,7 @@
 
 namespace MissaelAnda\MercadoPago\Exceptions;
 
-class ApiException extends \Exception
+class ApiException extends \Exception implements \JsonSerializable
 {
     /**
      * The error type
@@ -16,6 +16,11 @@ class ApiException extends \Exception
     }
 
     public function getData(): array
+    {
+        return $this->data;
+    }
+
+    public function jsonSerialize(): array
     {
         return $this->data;
     }
