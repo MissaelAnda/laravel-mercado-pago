@@ -85,10 +85,8 @@ class PointClient extends Client
         return $intent->set($data);
     }
 
-    public function findPaymentIntent(string $id): PaymentIntent
+    public function findPaymentIntent(string $id): ?PaymentIntent
     {
-        $data = $this->get(static::replaceUriParams(self::GET_INTENT, $id));
-
-        return new PaymentIntent($data);
+        return $this->findResource(PaymentIntent::class, static::replaceUriParams(self::GET_INTENT, $id));
     }
 }
