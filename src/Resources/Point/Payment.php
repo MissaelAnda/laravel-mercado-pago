@@ -14,8 +14,8 @@ use MissaelAnda\MercadoPago\Resources\Resource;
 class Payment extends Resource
 {
     public int $id;
-    public int $installments;
-    public string $installmentsCost;
-    public string $type;
+    public ?int $installments;
+    public ?string $installmentsCost;
+    public ?string $type;
     public ?string $state;
 }
