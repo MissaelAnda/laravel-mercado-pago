@@ -161,6 +161,8 @@ abstract class Resource implements Arrayable, \ArrayAccess, \JsonSerializable
             'enum' => $mapper['enum']::from($value),
             'date_immutable' => $value == null ? $value : CarbonImmutable::parse($value),
             'date' => $value == null ? $value : Date::parse($value),
+            'float' => $value !== null ? (float)$value : null,
+            'int' => $value !== null ? (int)$value : null,
             'none' => $value,
             default => throw new \InvalidArgumentException("Unhandled property mapper type $mapper[type]."),
         };
@@ -199,6 +201,12 @@ abstract class Resource implements Arrayable, \ArrayAccess, \JsonSerializable
         // if the value is no expected the native function will throw an exception
         else if (enum_exists($propertyType)) {
             return ['type' => 'enum', 'enum' => $propertyType];
+        }
+        else if ($propertyType === 'float') {
+            return ['type' => 'float'];
+        }
+        else if ($propertyType === 'int') {
+            return ['type' => 'int'];
         }
         // The property exists but should not be transformed, simply assign it
         else {
